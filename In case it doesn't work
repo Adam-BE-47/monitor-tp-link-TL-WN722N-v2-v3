@@ -1,0 +1,31 @@
+sudo apt update
+
+sudo apt dist-upgrade
+
+reboot
+
+sudo apt install linux-headers-$(uname -r)
+
+sudo apt install bc
+
+sudo rmmod r8188eu.ko
+
+sudo git clone https://github.com/keralahacker/tp-link-v3-usb
+
+cd tp-link-v3-usb
+
+sudo unzip realtek-rtl8188eus-keralahacker.zip
+
+cd realtek-rtl8188eus-dkms-kali-master
+
+sudo -i
+
+echo "blacklist r8188eu.ko" > "/etc/modprobe.d/realtek.conf"
+
+exit
+
+sudo make
+
+sudo make install
+
+sudo modprobe 8188eu
